@@ -1,5 +1,6 @@
-# AirBnB Clone - The Console
-The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+# AirBnB Clone - Version #3
+This Project attempts to clone the the AirBnB application and website, including the database, storage, RESTful API, Web Framework, and Front End. Currently the application is designed to run with 2 storage engine model. 
+The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
@@ -8,6 +9,17 @@ The console is the first segment of the AirBnB project at Holberton School that 
 * Update attributes of an object
 * Destroy an object
 
+## The Setup
+* dev/setup.sql: Drops test and dev databases, and then reinitializes the datbase.
+  - Usage: $ cat dev/setup.sql | mysql -uroot -p
+* setup_mysql_dev.sql: initialiezs dev database with mysql for testing
+  - Usage: $ cat setup_mysql_dev.sql | mysql -uroot -p
+* setup_mysql_test.sql: initializes test database with mysql for testing
+  - Usage: $ cat setup_mysql_test.sql | mysql -uroot -p
+* 0-setup_web_static.sh: sets up nginx web server config file & the file structure.
+  - Usage: $ sudo ./0-setup_web_static.sh
+* 3-deploy_web_static.py
+   - Usage: $ fab -f 3-deploy_web_static.py deploy -i ~/.ssh/holberton -u ubuntu
 ## Table of Content
 * [Environment](#environment)
 * [Installation](#installation)
@@ -125,7 +137,8 @@ TestBaseModel class:
 * `def test_pep8_conformance_test_user(self)` - Test that tests/test_models/test_user.py conforms to PEP8
 * `def test_user_module_docstring(self)` - Test for the user.py module docstring
 * `def test_user_class_docstring(self)` - Test for the User class docstring
-
+## Testing 
+ - $ python3 -m unittest discover -v ./tests/
 
 ## Examples of use
 ```
